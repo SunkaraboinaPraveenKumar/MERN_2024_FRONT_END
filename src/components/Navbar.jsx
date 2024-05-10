@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Context from '../context/Context'
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import { ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { IoLogInOutline } from "react-icons/io5";
@@ -32,7 +32,6 @@ const Navbar = () => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            transition: Bounce,
         });
         auth.setisAuthenticated(false);
         setTimeout(() => {
@@ -52,7 +51,6 @@ const Navbar = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
-                transition:Bounce
             />
             <div className="navbar">
                 <Link to={'/'} className="left">

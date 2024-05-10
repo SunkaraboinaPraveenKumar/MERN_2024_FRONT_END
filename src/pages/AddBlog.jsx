@@ -23,7 +23,7 @@ const AddBlog = () => {
                     withCredentials: true
                 }
             );
-            console.log(api.data.blog);
+            // console.log(api.data.blog);
             setTitle(api.data.blog.title);
             setDescription(api.data.blog.description);
             setImgUrl(api.data.blog.imgUrl);

@@ -16,7 +16,7 @@ const Home = () => {
                     withCredentials: true
                 }
             );
-            console.log(response.data.blogs);
+            // console.log(response.data.blogs);
             setBlog(response.data.blogs);
         };
 

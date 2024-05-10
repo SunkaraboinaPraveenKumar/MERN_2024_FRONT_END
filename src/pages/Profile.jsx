@@ -18,7 +18,7 @@ const Profile = () => {
                     withCredentials: true
                 }
             );
-            console.log(api.data.user);
+            // console.log(api.data.user);
             // setBlog(response.data.blogs);
             auth.setUser(api.data.user);
             auth.setisAuthenticated(true);

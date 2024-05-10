@@ -28,31 +28,45 @@ const MyBlogs = () => {
         fetchBlog();
     }, []);
     const deleteBlog = async (id) => {
-        const api = await axios.delete(
+        try {
+          const response = await axios.delete(
             `https://react-mern-wdm.onrender.com/api/blogs/${id}`,
             {
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                withCredentials: true
+              headers: { "Content-Type": "application/json" },
+              withCredentials: true,
             }
-        );
-        console.log(api.data.message);
-        toast.success(api.data.message,{
+          );
+      
+          if (response.status === 200) {
+            // toast.success(response.data.message, {
+            //   position: "top-center",
+            //   autoClose: 1500,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   theme: "dark",
+            // });
+      
+            // Update state to remove deleted blog
+            setBlog(blog.filter((b) => b._id !== id));
+      
+            // Navigate after success
+            setTimeout(() => {
+              navigate('/profile');
+            }, 1500);
+          } else {
+            throw new Error("Failed to delete blog");
+          }
+        } catch (error) {
+          console.error("Error deleting blog:", error);
+          toast.error("An error occurred during deletion.", {
             position: "top-center",
             autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
             theme: "dark",
-            });
-            auth.setisAuthenticated(true);
-            setTimeout(()=>{
-                navigate('/profile')
-            },1500);
-    }
+          });
+        }
+      };      
     const editBlog = async (id)=>{
         auth.setId(id);
         navigate('/addblog');
