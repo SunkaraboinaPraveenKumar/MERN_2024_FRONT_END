@@ -46,7 +46,7 @@ const Login = () => {
         }
         catch (error) {
             // console.error(error);
-            toast.error("User Doesnot Exist",{
+            toast.error("User Doesnot Exist Register First",{
                 position: "top-center",
                 autoClose: 1500,
                 hideProgressBar: false,
