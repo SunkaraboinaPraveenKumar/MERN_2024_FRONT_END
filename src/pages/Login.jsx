@@ -46,7 +46,7 @@ const Login = () => {
         }
         catch (error) {
             // console.error(error);
-            toast.error(error.response.data.message,{
+            toast.error("User Doesnot Exist",{
                 position: "top-center",
                 autoClose: 1500,
                 hideProgressBar: false,
@@ -56,7 +56,7 @@ const Login = () => {
                 progress: undefined,
                 theme: "dark",
                 });
-                // auth.setisAuthenticated(false);
+                auth.setisAuthenticated(false);
         }
     }
     return (
