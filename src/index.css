@@ -1,23 +1,55 @@
-.navbar{
+/* Base styles for the navbar */
+.navbar {
     background-color: blue;
-    padding:10px;
+    padding: 10px;
+    display: flex; /* Ensure flex layout for responsiveness */
+    justify-content: space-between; /* Align elements across the navbar */
 }
-.left{
+
+/* Styles for left section */
+.left {
     text-decoration: none;
-    color:white;
+    color: white;
 }
-.right{
+
+/* Styles for right section */
+.right {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:5px;
-    gap:10px;
+    padding: 5px;
+    gap: 10px; /* Space between items */
 }
-.items{
+
+/* Styles for items within the right section */
+.items {
     text-decoration: none;
-    color:white;
+    color: white;
 }
-.items:hover{
+
+/* Hover effect for items */
+.items:hover {
     background-color: black;
-    color:white;
+    color: white;
+}
+
+/* Media query for 320px or smaller viewports */
+@media (max-width: 320px) {
+    .navbar {
+        flex-direction: column; /* Change layout to column for smaller screens */
+        align-items: flex-start; /* Align items to start for a vertical layout */
+    }
+    
+    .right {
+        flex-direction: column; /* Stack the items vertically */
+        padding: 0; /* Adjust padding for the new layout */
+        gap: 5px; /* Reduce gap for a more compact layout */
+    }
+    .edit{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3px;
+        padding-left: 8px;
+    }
 }

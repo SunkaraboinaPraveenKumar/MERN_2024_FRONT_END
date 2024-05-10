@@ -105,8 +105,10 @@ const MyBlogs = () => {
                                         <small>{new Date(data.createdAt).toLocaleDateString()}</small>
                                     </p>
                                     <UserDetail id={data.user} />
-                                    <button onClick={()=>editBlog(data._id)} className='btn btn-warning mx-5'>Edit</button>
-                                    <button onClick={() => deleteBlog(data._id)} className='btn btn-danger'>Delete</button>
+                                    <div class="del-edit">
+                                    <button onClick={()=>editBlog(data._id)} className='btn btn-warning mx-5 edit'>Edit</button>
+                                    <button onClick={() => deleteBlog(data._id)} className='btn btn-danger del'>Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
