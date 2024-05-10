@@ -41,7 +41,7 @@ const Register = () => {
                 theme: "dark",
                 transition: Bounce,
                 });
-                auth.setisAuthenticated(true)
+                // auth.setisAuthenticated(true)
                 setTimeout(()=>{
                     navigate('/login')
                 },1500);
